@@ -6,6 +6,7 @@ public class Match {
     public Team teamA;
     public Team teamB;
     public String score;
+    public ReadData data;
 
     public void playMatch(Team teamA, Team teamB) {
         long start = System.currentTimeMillis();
@@ -31,8 +32,8 @@ public class Match {
     }
 
     public Match(String teamAname, String teamBname) {
-        teamA = new Team(teamAname);
-        teamB = new Team(teamBname);
+        setTeamA(new Team(teamAname));
+        setTeamB(new Team(teamBname));
         score = teamA.getName() + " " + Integer.toString(teamA.getGoals()) + " - " + Integer.toString(teamB.getGoals()) + " " + teamB.getName();
         System.out.println(score);
     }
